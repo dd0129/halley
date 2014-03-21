@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:annotation-config />
+    <context:component-scan base-package="com.dianping" />
+    <aop:aspectj-autoproxy />
+
+    <bean id="kickTaskService" class="com.dianping.service.executer.KickTaskExecute">
+        <property name="interval">
+            <value>300</value>
+        </property>
+    </bean>
+
+    <!-- 定义调度对象和调用的方法 -->
+    <!-- 任务:初始化 -->
+    <bean id="kickTaskExe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="kickTaskService"/>
+        <property name="targetMethod" value="execute"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+
+    <bean id="kickTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="kickTaskExe"/>
+        <!-- 触发时间(使用cron表达式) 每天早上6点-->
+        <property name="cronExpression" value="5 0-59/2 * * * ?"/>
+    </bean>
+
+
+</beans>

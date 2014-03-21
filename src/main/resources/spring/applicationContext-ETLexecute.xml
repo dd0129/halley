@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:annotation-config />
+    <context:component-scan base-package="com.dianping" />
+    <aop:aspectj-autoproxy />
+
+    <bean id="salesforce_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>salesforce</value>
+        </property>
+        <property name="concurrency">
+            <value>5</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingKV_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingKV</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DPAdwords_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DPAdwords</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingBI_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingBI</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingMobile_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingMobile</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DPAPIReport_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DPAPIReport</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingM3_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingM3</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPing_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPing</value>
+        </property>
+        <property name="concurrency">
+            <value>3</value>
+        </property>
+    </bean>
+    <bean id="mysql_analysis_result_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_analysis_result</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_MySQLDianPingGroup_dbo_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_MySQLDianPingGroup_dbo</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_TuanGou_Analytics_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_TuanGou_Analytics</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_TuanGou2010_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_TuanGou2010</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_TuanGou2010_220_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_TuanGou2010_220</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingLog_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingLog</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_edm_mail_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_edm_mail</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingPic_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingPic</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_dpedmlog_service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_dpedmlog</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingAudit_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingAudit</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingUC_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingUC</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="sqlserver_zSurvey_NET_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>sqlserver_zSurvey_NET</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mongodb_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mongodb</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="greenplum_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>greenplum</value>
+        </property>
+        <property name="concurrency">
+            <value>10</value>
+        </property>
+    </bean>
+    <bean id="gpanalysis_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>gpanalysis</value>
+        </property>
+        <property name="concurrency">
+            <value>10</value>
+        </property>
+    </bean>
+    <bean id="gpreport58_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>gpreport58</value>
+        </property>
+        <property name="concurrency">
+            <value>10</value>
+        </property>
+    </bean>
+    <bean id="gpreport59_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>gpreport59</value>
+        </property>
+        <property name="concurrency">
+            <value>10</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingBC_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingBC</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingCOMM_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingCOMM</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_TuanGouMobile_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_TuanGouMobile</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingPOI_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingPOI</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingPromo_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingPromo</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DPOpenPlatform_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DPOpenPlatform</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_GroupAPIReport_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_GroupAPIReport</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingHist_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingHist</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingMCData_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingMCData</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingMC_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingMC</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingCredit_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingCredit</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <bean id="mysql_DianPingDPC_Service" class="com.dianping.service.executer.ETLExecute">
+
+        <property name="database_src">
+            <value>mysql_DianPingDPC</value>
+        </property>
+        <property name="concurrency">
+            <value>1</value>
+        </property>
+    </bean>
+    <!-- 定义调度对象和调用的方法 -->
+    <!-- 任务:初始化 -->
+    <bean id="salesforce_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="salesforce_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingKV_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingKV_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingM3_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingM3_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingMC_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingMC_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingCredit_Exe"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingCredit_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingDPC_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingDPC_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingHist_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingHist_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingMCData_Exe"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingMCData_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingPOI_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingPOI_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingPromo_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingPromo_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DPOpenPlatform_Exe"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DPOpenPlatform_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_GroupAPIReport_Exe"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_GroupAPIReport_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_MySQLDianPingGroup_dbo_Exe"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_MySQLDianPingGroup_dbo_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_TuanGouMobile_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_TuanGouMobile_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingCOMM_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingCOMM_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingBC_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingBC_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DPAdwords_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DPAdwords_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingUC_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingUC_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingAudit_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingAudit_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingBI_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingBI_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingMobile_Exe"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingMobile_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DPAPIReport_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DPAPIReport_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPing_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPing_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_analysis_result_Exe"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_analysis_result_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_TuanGou_Analytics_Exe"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_TuanGou_Analytics_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_TuanGou2010_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_TuanGou2010_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_TuanGou2010_220_Exe"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_TuanGou2010_220_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingLog_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingLog_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_edm_mail_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_edm_mail_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_DianPingPic_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_DianPingPic_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mysql_dpedmlog_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mysql_dpedmlog_service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="sqlserver_zSurvey_NET_Exe"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="sqlserver_zSurvey_NET_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="mongodb_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mongodb_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="greenplum_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="greenplum_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="gpanalysis_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="gpanalysis_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="gpreport58_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="gpreport58_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <bean id="gpreport59_Exe" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="gpreport59_Service"/>
+        <property name="targetMethod" value="execute"/>
+    </bean>
+    <!-- 配置触发器 -->
+    <bean id="salesforce_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="salesforce_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="35/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingKV_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingKV_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="28/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingM3_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingM3_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="27/30 * * * * ?"/>
+    </bean>
+    <bean id="greenplum_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="greenplum_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="27/30 * * * * ?"/>
+    </bean>
+    <bean id="gpanalysis_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="gpanalysis_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="31/30 * * * * ?"/>
+    </bean>
+    <bean id="gpreport58_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="gpreport58_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="28/30 * * * * ?"/>
+    </bean>
+    <bean id="gpreport59_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="gpreport59_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="29/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingMC_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingMC_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="25/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingCOMM_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingCOMM_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="25/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingBC_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingBC_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="0/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DPAdwords_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DPAdwords_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="1/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingAudit_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingAudit_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="2/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingBI_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingBI_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="3/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingMobile_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingMobile_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="4/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DPAPIReport_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DPAPIReport_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="5/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPing_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPing_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="6/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_analysis_result_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_analysis_result_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="7/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_MySQLDianPingGroup_dbo_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_MySQLDianPingGroup_dbo_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="8/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_TuanGou_Analytics_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_TuanGou_Analytics_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="9/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_TuanGou2010_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_TuanGou2010_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="10/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_TuanGou2010_220_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_TuanGou2010_220_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="11/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingLog_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingLog_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="12/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_edm_mail_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_edm_mail_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="13/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingPic_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingPic_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="14/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_dpedmlog_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_dpedmlog_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="15/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingUC_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingUC_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="16/30 * * * * ?"/>
+    </bean>
+    <bean id="sqlserver_zSurvey_NET_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="sqlserver_zSurvey_NET_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="17/30 * * * * ?"/>
+    </bean>
+    <bean id="mongodb_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mongodb_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="18/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingCredit_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingCredit_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="19/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingDPC_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingDPC_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="20/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingHist_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingHist_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="21/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingMCData_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingMCData_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="22/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingPOI_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingPOI_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="23/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DianPingPromo_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DianPingPromo_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="24/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_DPOpenPlatform_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_DPOpenPlatform_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="25/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_GroupAPIReport_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_GroupAPIReport_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="26/30 * * * * ?"/>
+    </bean>
+    <bean id="mysql_TuanGouMobile_Trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mysql_TuanGouMobile_Exe"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="28/30 * * * * ?"/>
+    </bean>
+    <!-- 调度程序总管理类 -->
+    <bean id="cronTaskManager" lazy-init="true" autowire="no"
+          class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <!-- 添加触发器 -->
+        <property name="triggers">
+            <list>
+                <!-- ETL 线程 -->
+                <ref bean="mysql_DianPingKV_Trigger"/>
+                <ref bean="mysql_DianPingCOMM_Trigger"/>
+                <ref bean="mysql_DianPingBC_Trigger"/>
+                <ref bean="mysql_DianPingBI_Trigger"/>
+                <ref bean="mysql_DianPingM3_Trigger"/>
+                <ref bean="mysql_DianPingMobile_Trigger"/>
+                <ref bean="mysql_DPAPIReport_Trigger"/>
+                <ref bean="mysql_DianPing_Trigger"/>
+                <ref bean="mysql_analysis_result_Trigger"/>
+                <ref bean="mysql_MySQLDianPingGroup_dbo_Trigger"/>
+                <ref bean="mysql_TuanGou_Analytics_Trigger"/>
+                <ref bean="mysql_TuanGou2010_Trigger"/>
+                <ref bean="mysql_DianPingLog_Trigger"/>
+                <ref bean="mysql_edm_mail_Trigger"/>
+                <ref bean="mysql_DianPingPic_Trigger"/>
+                <ref bean="mysql_dpedmlog_Trigger"/>
+                <ref bean="mysql_DianPingAudit_Trigger"/>
+                <ref bean="mysql_DianPingUC_Trigger"/>
+                <ref bean="mysql_DPAdwords_Trigger"/>
+                <ref bean="mysql_TuanGou2010_220_Trigger"/>
+                <ref bean="sqlserver_zSurvey_NET_Trigger"/>
+                <ref bean="salesforce_Trigger"/>
+                <ref bean="mongodb_Trigger"/>
+                <ref bean="greenplum_Trigger"/>
+                <ref bean="gpanalysis_Trigger"/>
+                <ref bean="gpreport58_Trigger"/>
+                <ref bean="gpreport59_Trigger"/>
+                <ref bean="mysql_DianPingCredit_Trigger"/>
+                <ref bean="mysql_DianPingDPC_Trigger"/>
+                <ref bean="mysql_DianPingHist_Trigger"/>
+                <ref bean="mysql_DianPingMCData_Trigger"/>
+                <ref bean="mysql_DianPingMC_Trigger"/>
+                <ref bean="mysql_DianPingPOI_Trigger"/>
+                <ref bean="mysql_DianPingPromo_Trigger"/>
+                <ref bean="mysql_DPOpenPlatform_Trigger"/>
+                <ref bean="mysql_GroupAPIReport_Trigger"/>
+                <ref bean="mysql_TuanGouMobile_Trigger"/>
+                <!-- 计算任务线程 -->
+                <ref bean="gp57_1_executeTrigger"/>
+                <ref bean="gp59_1_executeTrigger"/>
+                <ref bean="hive_1_executeTrigger"/>
+                <ref bean="hive_high_level_executeTrigger"/>
+                <ref bean="dq_executeTrigger"/>
+                <!-- 职能型线程 -->
+                <ref bean="waitInitTrigger"/>
+                <ref bean="readyTrigger"/>
+                <ref bean="taskRecallTrigger"/>
+                <ref bean="timeoutTrigger"/>
+                <ref bean="preInitTrigger"/>
+                <ref bean="kickTaskTrigger"/>
+            </list>
+        </property>
+        <property name="schedulerName" value="startExecute"/>
+        <property name="configLocation" value="classpath:quartz.properties" />
+
+    </bean>
+</beans>

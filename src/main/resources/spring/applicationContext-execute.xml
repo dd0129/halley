@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config />
+    <context:component-scan base-package="com.dianping" />
+    <aop:aspectj-autoproxy />
+
+    <bean id="dq_executeService" class="com.dianping.service.executer.StandardExecute">
+        <property name="run_num" value="5"/>
+        <property name="database_src">
+            <value>dataquality</value>
+        </property>
+    </bean>
+
+    <bean id="gp57_executeService" class="com.dianping.service.executer.StandardExecute">
+        <property name="run_num" value="5"/>
+        <property name="database_src">
+            <value>gp57</value>
+        </property>
+
+    </bean>
+
+    <bean id="gp59_executeService" class="com.dianping.service.executer.StandardExecute">
+        <property name="run_num" value="5"/>
+        <property name="database_src">
+            <value>gp59</value>
+        </property>
+
+    </bean>
+
+    <bean id="hive_executeService" class="com.dianping.service.executer.StandardExecute">
+        <property name="run_num" value="40"/>
+        <property name="database_src">
+            <value>hive</value>
+        </property>
+
+    </bean>
+
+    <bean id="hive_high_level_executeService" class="com.dianping.service.executer.StandardExecute">
+        <property name="run_num" value="5"/>
+        <property name="database_src">
+            <value>hive_high_level</value>
+        </property>
+
+    </bean>
+
+    <!-- 定义调度对象和调用的方法 -->
+    <!-- 任务:执行 -->
+    <bean id="dq_execute" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="dq_executeService"/>
+        <property name="targetMethod" value="execute"/>
+        <property name="concurrent" value="true"/>
+    </bean>
+
+    <bean id="gp57_execute" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="gp57_executeService"/>
+        <property name="targetMethod" value="execute"/>
+        <property name="concurrent" value="true"/>
+    </bean>
+
+    <bean id="gp59_execute" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="gp59_executeService"/>
+        <property name="targetMethod" value="execute"/>
+        <property name="concurrent" value="true"/>
+    </bean>
+
+    <bean id="hive_execute" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="hive_executeService"/>
+        <property name="targetMethod" value="execute"/>
+        <property name="concurrent" value="true"/>
+    </bean>
+
+    <bean id="hive_high_level_execute" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="hive_high_level_executeService"/>
+        <property name="targetMethod" value="execute"/>
+        <property name="concurrent" value="true"/>
+    </bean>
+
+    <!-- 配置触发器 -->
+    <bean id="dq_executeTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="dq_execute"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="8/20 * * * * ?"/>
+    </bean>
+
+    <bean id="gp57_1_executeTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="gp57_execute"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="2/15 * * * * ?"/>
+    </bean>
+
+    <bean id="gp57_2_executeTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="gp57_execute"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="7/30 * * * * ?"/>
+    </bean>
+
+    <bean id="gp59_1_executeTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="gp59_execute"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="12/15 * * * * ?"/>
+    </bean>
+
+    <bean id="gp59_2_executeTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="gp59_execute"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="17/30 * * * * ?"/>
+    </bean>
+
+    <bean id="hive_1_executeTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="hive_execute"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="16/10 * * * * ?"/>
+    </bean>
+
+    <bean id="hive_2_executeTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="hive_execute"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="21/30 * * * * ?"/>
+    </bean>
+
+    <bean id="hive_high_level_executeTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="hive_high_level_execute"/>
+        <!-- 触发时间(使用cron表达式) -->
+        <property name="cronExpression" value="24/30 * * * * ?"/>
+    </bean>
+</beans>
+
